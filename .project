@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>ch.parisi.e4.advancedlaunch.update</name>
+	<name>eclipse-multilauncher-plugin</name>
 	<comment></comment>
 	<projects>
 	</projects>
 	<buildSpec>
-		<buildCommand>
-			<name>org.eclipse.pde.UpdateSiteBuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
 	</buildSpec>
 	<natures>
-		<nature>org.eclipse.pde.UpdateSiteNature</nature>
 	</natures>
 </projectDescription>
