@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/ch.parisi.e4.advancedlaunch.feature_1.1.0.jar" id="ch.parisi.e4.advancedlaunch.feature" version="1.1.0">
+   <feature url="features/ch.parisi.e4.advancedlaunch.feature_1.2.0.jar" id="ch.parisi.e4.advancedlaunch.feature" version="1.2.0">
       <category name="ch.parisi.e4.advancedlaunch.category"/>
    </feature>
    <category-def name="ch.parisi.e4.advancedlaunch.category" label="Multilauncher"/>
