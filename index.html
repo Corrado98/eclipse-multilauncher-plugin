@@ -37,7 +37,7 @@
         <div class="text-vertical-center">
             <h1>Eclipse-Multilauncher</h1>
             <h3>Drag and drop this button into your Eclipse</h3>
-            <br>
+            <br />
             <a href="https://corrado98.github.io/eclipse-multilauncher-plugin/update/" class="btn btn-dark btn-lg">Update Site</a>
         </div>
     </header>
@@ -51,27 +51,103 @@
     <section id="portfolio" class="portfolio">
         <div class="container">
             <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 text-center">
+                <div class="col-lg-10 col-lg-offset-1 center">
                     <h2>Multilauncher-Documentation</h2>
-                    <hr class="small">
-                    <div class="row">
-						<br>
-						<img class="img-portfolio img-responsive" src="img/launch_group.PNG">
-						<br>
-						<img class="img-portfolio img-responsive" src="img/new_configuration.PNG">
-						<br>
-						<br>
-						<br>
-						<img class="img-portfolio img-responsive" src="img/launch_modes.PNG">
-						<br>
-						<br>
-						<br>
-						<img class="img-portfolio img-responsive" src="img/add_configuration.PNG">
-						<br>
-						<br>
-						<br>
-						<img class="img-portfolio img-responsive" src="img/server_configuration.PNG">
+					
+					<h4>This plugin allows to run launch-configurations in a sequence automatically, while waiting for certain conditions to be met to start the next list-entry e.g. wait for termination.</h4>
+					<br />		
+					
+					<h3>GUI-Additions</h3>
+                    <hr class="small">	                   
+ 					<img class="img-portfolio" src="img/launch_group.PNG">
+                    <img class="img-portfolio" src="img/termination_button.PNG">
+					<br />
+					<br />
+					<br />
+                    <img class="img-portfolio" src="img/new_configuration.PNG">
+                      
+				
+					
+					<h3>Features</h3>
+					
+					<h4>Create a parentlaunch (multilaunch), which functions as a container for childlaunches and even other parentlaunches. Add, Edit, Move and Remove your launches within your multilaunch.</h4>
+					<br />
+					
+					<h4>You can create <i>n</i> multilaunches with the option to even nest and therefore combine them together.</h4>
+					<br />
+					
+					<h4>Infinite-loops and wrong launch-references at any nesting-depth will be detected and consequently you won’t be able to run your multilaunch, until you’ve dealt with the shown error message.</h4>
+					<br />
+				
+				
+					<h3>Launch Modes</h3>
+								
+					<p><h4><b>Run</b> - is a native Eclipse-Implementation, which starts the application normally.</h4></p>
+					
+					<p><h4><b>Debug</b> - is a native Eclipse-Implementation, which starts the application normally but waits at breakpoints.</h4></p>
+					
+					<p><h4><b>Inherit</b> - is an auto adaptable mode, which varies from being in Run -or Debug. Depends on multilaunch startmode.</h4></p>
+					<br />
+					
+					
+					<div class="row">
+                        <div class="col-md-12">
+                            <div class="portfolio-item">
+                                    <img class="img-portfolio" src="img/launch_modes.PNG">
+                            </div>
+                        </div>
 					</div>
+					
+					
+					<h3>Waiting Strategies</h3>
+					
+					<p><h4><b>None</b> - Doesn’t wait.</h4><p/>
+					
+					<p><h4><b>Delay</b> - Wait for a number of seconds.</h4></p>
+					
+					<p><h4><b>Wait for termination</b> - Waits for termination of a launch.</h4></p>
+					
+					<p><h4><b>Wait for Console-String</b> - Reads the output of all consoles and waits for a <a href="http://www.vogella.com/tutorials/JavaRegularExpressions/article.html">regular expression</a>.</h4></p>
+					<br />
+					
+					<div class="row">
+						 <div class="col-md-12">
+                            <div class="portfolio-item">
+                                    <img class="img-portfolio" src="img/post_actions.PNG">
+                            </div>
+                        </div>
+					</div>
+					
+					
+					<h3>Examples</h3>
+					
+					<h4>This multilaunch starts a Server and will only start the Application when any printed console-string contains: "successfully started".</h4>
+					<br />	
+					
+					<div class="row">
+						 <div class="col-md-12">
+                            <div class="portfolio-item">
+                                    <img class="img-portfolio" src="img/server_configuration.PNG">
+                            </div>
+                        </div>
+					</div>
+                    
+					<hr class="big">
+					
+					<h4>This multilaunch starts 'Application 1' in <i>run mode</i> and will wait until it terminates, before 'Application 2' will be started in <i>debug mode</i>.</h4>
+					<br />
+					
+					<div class="row">
+						 <div class="col-md-12">
+                            <div class="portfolio-item">
+                                    <img class="img-portfolio" src="img/wait_configuration.PNG">
+                            </div>
+                        </div>
+					</div>
+					
+					<hr class="big">
+					
+					
                 <!-- /.col-lg-10 -->
 				</div>
             <!-- /.row -->
