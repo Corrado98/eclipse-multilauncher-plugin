@@ -3,7 +3,7 @@
    <description name="Multilauncher" url="https://corrado98.github.io/eclipse-multilauncher-plugin/update/">
       The Multilauncher allows to run launch-configurations in a sequence automatically, while waiting for certain conditions to be met to start the next list-entry e.g. wait for termination.
    </description>
-   <feature url="features/ch.parisi.e4.advancedlaunch.feature_1.4.0.jar" id="ch.parisi.e4.advancedlaunch.feature" version="1.4.0">
+   <feature url="features/ch.parisi.e4.advancedlaunch.feature_1.4.1.jar" id="ch.parisi.e4.advancedlaunch.feature" version="1.4.1">
       <category name="ch.parisi.e4.advancedlaunch.category"/>
    </feature>
    <category-def name="ch.parisi.e4.advancedlaunch.category" label="Multilauncher"/>
