@@ -58,39 +58,55 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 center">
+					<h2>Latest Release: 1.5</h2>
+					<ul>
+						<li><h4>Added waiting strategy: <a href="#strategies">Wait for dialog</a></h4></li>
+						<li><h4>Added launch deactivation / activation</h4></li>
+						<li><h4>Separated waiting strategy: 'Wait for Console-String' into</h4></li>
+						<ol>
+						  <li><h4><a href="#strategies">Wait for text</a></h4></li>
+						  <li><h4><a href="#strategies">Wait for regex</a></h4></li>
+						</ol> 
+						<li><h4>Fix partial matching of regex for expressions: '^' and '$'</h4></li>
+						<li><h4>Added <a href="#console">Multilauncher-Console</a></h4></li>
+					</ul>
+					<br />
+
+				
+				
                     <h2>Multilauncher-Documentation</h2>
 					
 					<h4>This plugin allows to run launch-configurations in a sequence automatically, while waiting for certain conditions to be met to start the next list-entry e.g. wait for termination.</h4>
 					<br />		
 					
+					
 					<h3>GUI-Additions</h3>
 					<h4>'Launch Group' exists in the <i>Run</i> -and in the <i>Debug Configurations...</i> menu.</h4>
  					<img class="img-portfolio" src="img/launch_group.PNG">
                     <img class="img-portfolio" src="img/termination_button.PNG">
+					<img class="img-portfolio" src="img/remove_console_button.PNG">
 					<br />
 					<br />
-					<br />
+					<br />  
                     <img class="img-portfolio" src="img/new_configuration.PNG">
-                      
 				
 					
-					<h3>Features</h3>
+					<h3 id="console">Features</h3>
 					
-					<h4>Create a parentlaunch (multilaunch), which functions as a container for childlaunches and even other multilaunches. Add, Edit, Move and Remove your launches within your multilaunch.</h4>
-					<br />
-					
-					<h4>You can create <i>n</i> multilaunches with the option to even nest and therefore combine them together.</h4>
-					<br />
-					
-					<h4>Infinite-loops and wrong launch-references at any nesting-depth will be detected and consequently you won’t be able to run your multilaunch, until you’ve dealt with the shown error message.</h4>
-					<br />
-				
-				
+						<ul>
+						  <li><h4>Create a parentlaunch (multilaunch), which functions as a container for childlaunches and even other multilaunches. Add, Edit, Move and Remove your launches within your multilaunch.</h4></li>
+						  <li><h4>You can create <i>n</i> multilaunches with the option to even nest and therefore combine them together.</h4></li>
+						  <li><h4>Infinite-loops and wrong launch-references at any nesting-depth will be detected and consequently you won’t be able to run your multilaunch, until you’ve dealt with the shown error message.</h4></li>
+						  <li><h4>Abort a multilaunch on childlaunch error. Not supported for the strategies 'Wait for dialog' and 'None'.</h4></li>
+
+						 <li><h4>Every multilaunch logs the entire launch sequence into its own <a>Multilauncher-Console</a>. It is firtly created at the first multilaunch and can be cleared or removed at any moment. It will be automatically readded to the console view on the next multilaunch. New log messages are always appended at the end.</h4></li>
+						</ul> 
+									
 					<h3>Launch Modes</h3>
 								
 					<p><h4><b>Run</b> - is a native Eclipse-Implementation, which starts the application normally.</h4></p>
 					
-					<p><h4><b>Debug</b> - is a native Eclipse-Implementation, which starts the application normally but waits at breakpoints.</h4></p>
+					<p><h4><b>Debug</b> - is a native Eclipse-Implementation, which starts the application normally, but waits at breakpoints.</h4></p>
 					
 					<p><h4><b>Profile</b> - is a native Eclipse-Implementation to profile your applications. A common profiler for Eclipse is the 'JProfiler'.</h4></p>
 					
@@ -108,15 +124,20 @@
 					</div>
 					
 					
-					<h3>Waiting Strategies</h3>
+					<h3 id="strategies">Waiting Strategies</h3>
 					
-					<p><h4><b>None</b> - Doesn’t wait.</h4><p/>
+					<p><h4><b>None</b> - Does not wait.</h4><p/>
 					
-					<p><h4><b>Delay</b> - Wait for a number of seconds.</h4></p>
+					<p><h4><b>Delay</b> - Waits for a specified number of seconds.</h4></p>
 					
 					<p><h4><b>Wait for termination</b> - Waits for termination of a launch.</h4></p>
 					
-					<p><h4><b>Wait for Console-String</b> - Reads the output of all consoles and waits for a <a href="http://www.vogella.com/tutorials/JavaRegularExpressions/article.html">regular expression</a>.</h4></p>
+					<p><h4><b>Wait for dialog</b> - Waits for dialog confirmation with configurable text or terminates multilaunch on cancellation.</h4></p>
+					
+					<p><h4><b>Wait for text</b> - Waits for line and partial text matching in the launch's console-output.</h4></p>
+					
+					<p><h4><b>Wait for regex</b> - Waits for line and partial <a href="http://www.vogella.com/tutorials/JavaRegularExpressions/article.html">regular expression</a> matching in the launch's console-output.</h4></p>
+					
 					<br />
 					
 					<div class="row">
@@ -130,20 +151,8 @@
 											
 					<h3>Examples</h3>
 					
-					<h4>This multilaunch starts a Server and will only start the Application when any printed console-string contains: "successfully started".</h4>
-					<br />	
-					
-					<div class="row">
-						 <div class="col-md-12">
-                            <div class="portfolio-item">
-                                    <img class="img-portfolio" src="img/server_configuration.PNG">
-                            </div>
-                        </div>
-					</div>
-                    
-					<hr class="big">
-					
-					<h4>This multilaunch starts 'Application 1' in <i>run mode</i> and will wait until it terminates, before 'Application 2' will be started in <i>debug mode</i>.</h4>
+					<!-- termination wait -->
+					<h4>This multilaunch starts <b>'Application 1'</b> in <i>run mode</i> and will wait until it terminates, before <b>'Application 2'</b> will be started in <i>debug mode</i>.</h4>
 					<br />
 					
 					<div class="row">
@@ -155,6 +164,37 @@
 					</div>
 					
 					<hr class="big">
+					
+					<!-- regex match -->	
+					<h4>This multilaunch starts <b>'Server'</b> in <i>debug mode</i> and will wait until the launch's console-output contains <b>'success[any_char_sequence]started'</b>, before <b>'Application 1'</b> will be started in <i>debug mode</i>.</h4>
+					<br />
+					
+					<div class="row">
+						 <div class="col-md-12">
+                            <div class="portfolio-item">
+                                    <img class="img-portfolio" src="img/server_starter_1.PNG">
+                            </div>
+                        </div>
+					</div>
+					
+					<hr class="big">
+					
+					<!-- text match -->				
+					<h4>This multilaunch starts <b>'Server'</b> in <i>debug mode</i> and will wait until the launch's console-output contains the <b>effective</b> char sequence <b>'successfully...started'</b>, before <b>'Application 1'</b> will be started in <i>debug mode</i>. Note that the regex expressions will just exhibit the literal meaning.</h4>
+					<br />
+					
+					<div class="row">
+						 <div class="col-md-12">
+                            <div class="portfolio-item">
+                                    <img class="img-portfolio" src="img/server_starter_2.PNG">
+                            </div>
+                        </div>
+					</div>
+					
+					<hr class="big">
+				
+					
+					
 					
 					
                 <!-- /.col-lg-10 -->
